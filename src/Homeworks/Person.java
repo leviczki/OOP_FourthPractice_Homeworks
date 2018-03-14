@@ -1,9 +1,9 @@
 package Homeworks;
 
 public class Person {
-	String nev;
-	int tomeg;
-	double magassag;
+	private String nev;
+	private int tomeg;
+	private double magassag;
 	
 	public double getTti() {
 		return (tomeg/(Math.pow(magassag, 2)));
