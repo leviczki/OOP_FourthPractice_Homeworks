@@ -16,12 +16,33 @@ public class Book {
 	
 	/////////////////////////////////////////////////////////
 	
+	public Book(String BookTitle, String BookAuthor, int BookPublicationYear, int BookPrice) {
+		this.BookTitle = BookTitle;
+		this.BookAuthor = BookAuthor;
+		this.BookPublicationYear = BookPublicationYear;
+		this.BookPrice = BookPrice;
+	}
+	
+	public Book(String cim, String szerzo) {
+		//java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)
+		this(cim, szerzo, java.time.LocalDate.now().getYear(), 2500);
+	}
+	
+	/////////////////////////////////////////////////////////
+	
 	public void bookPercentageIncrease(int percentage) {
 		this.BookPrice = this.BookPrice + (this.BookPrice*percentage)/100;
 	}
 	
 	public String bookInfo() {
 		return "\n\n"+ BookAuthor +": "+ BookTitle +"\n Kiadva: "+ BookPublicationYear +"\n Ára: "+ BookPrice;
+	}
+	
+	public boolean cimEgyezes(String cim) {
+		if(this.BookTitle.equals(cim))
+			return true;
+		
+		return false;
 	}
 
 	//////////////////////////////////////////////////////////
